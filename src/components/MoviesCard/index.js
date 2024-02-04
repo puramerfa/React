@@ -1,7 +1,7 @@
 import { Image, StyleSheet, TouchableOpacity } from "react-native"
 
 
-export const MoviesCard = (props) => {
+export function MoviesCard(props){
     return (
         <TouchableOpacity> 
             <Image style={styles.img} source={props.moviesURL} />

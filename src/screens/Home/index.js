@@ -6,13 +6,15 @@ import { MoviesCard } from "../../components/MoviesCard"
 import {MOVIESWATCHING} from "../../../utils/moviesWatching.js"
 import {MOVIESCRIME} from "../../../utils/moviesCrimes.js"
 import {MOVIESWATCH} from "../../../utils/moviesWatch.js"
+import { FilmList } from "../../components/FilmList/index.js"
 
 
 export const Home = () => {
+     
     return (
-
-        <ScrollView style={style.scrollView} StatusBar={StatusBar}>
-            <View style={style.container}>
+         
+        
+            <View style={style.container}>   
             <FlatList/>
             <View style={style.header}>
                 <Image style={style.primeVideoLogo} source={primeVideoLogo}></Image>
@@ -37,50 +39,21 @@ export const Home = () => {
             <TouchableOpacity style={style.movieImage} >
                  <Image source={MovieTheWhell}></Image>
             </TouchableOpacity>
-
-            <Text style={style.filmCategory}>Continue Watching</Text>
-            <FlatList
-                horizontal
-                data={MOVIESWATCHING}
-                keyExtractor={(item) => item.id} 
-                renderItem={({item}) => {
-                    return (   
-                        <MoviesCard moviesURL={item.moviesURL} />
-                    )
-                }}
-            /> 
-
-            <Text style={style.filmCategory}>Crime Movies</Text>
-            <FlatList
-                horizontal
-                data={MOVIESCRIME}
-                keyExtractor={(item) => item.id} 
-                renderItem={({item}) => {
-                    return (   
-                        <MoviesCard moviesURL={item.moviesURL} />
-                    )
-                }}
-            />
-
-            <Text style={style.filmCategory}>Wath in your leangue</Text>
-            <FlatList
-                horizontal
-                data={MOVIESWATCH}
-                keyExtractor={(item) => item.id} 
-                renderItem={({item}) => {
-                    return (   
-                        <MoviesCard moviesURL={item.moviesURL} />
-                    )
-                }}
-            />  
+    
+            <FilmList title="Continue Watchingaa" dataFilm={MOVIESWATCHING} />
+            <FilmList title="Crime Movies" dataFilm={MOVIESCRIME} /> 
+            <FilmList title="Wath in your leangue" dataFilm={MOVIESWATCH}/> 
             
- 
+        
+  
         </View>
-        </ScrollView>
+        // </ScrollView>
+        
         
     )
 }
- 
+
+
 
 
 
