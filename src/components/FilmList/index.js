@@ -1,9 +1,10 @@
-import { FlatList, Text, View } from "react-native";
+import { FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 import { MoviesCard } from "../MoviesCard";
 
 export function FilmList(props){
+    
     return (
-        <View>
+        <View style={style.view}>
             <Text style={style.filmCategory}>{props.title}</Text>
             <FlatList
                 horizontal
@@ -11,7 +12,9 @@ export function FilmList(props){
                 keyExtractor={(item) => item.id} 
                 renderItem={({item}) => {
                     return (   
-                        <MoviesCard moviesURL={item.moviesURL} />
+                        <TouchableOpacity> 
+                        <Image style={style.img} source={item.moviesURL} />
+                        </TouchableOpacity>
                     )
                 }}
             />  
@@ -19,9 +22,29 @@ export function FilmList(props){
     )
 }
 
+// export function MoviesCard(props){
+//     return (
+//         <TouchableOpacity> 
+//             <Image style={styles.img} source={props.moviesURL} />
+//         </TouchableOpacity>
+//     )
+// }
+
+// const styles = StyleSheet.create({
+//     img: {
+//         margin: 10,
+//     }
+// })
+
 
 
 const style = {
+    view: {
+        flex: 1
+    },
+    img: {
+        margin: 10,
+    },
     scrollView: {
         marginTop: 20,
         backgroundColor: '#232F3E'

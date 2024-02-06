@@ -13,7 +13,7 @@ export const Home = () => {
      
     return (
          
-        
+        <ScrollView style={style.scrollView}>
             <View style={style.container}>   
             <FlatList/>
             <View style={style.header}>
@@ -47,7 +47,7 @@ export const Home = () => {
         
   
         </View>
-        // </ScrollView>
+    </ScrollView>
         
         
     )
@@ -59,7 +59,6 @@ export const Home = () => {
 
 const style = {
     scrollView: {
-        marginTop: 20,
         backgroundColor: '#232F3E'
     },
     container: {
