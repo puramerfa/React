@@ -6,7 +6,7 @@ export default function Home() {
             <Text style={styles.headerText}>O que você deseja assitir?</Text>
 
             <View style={styles.containerInput} >
-              <TextInput placeholder="Pesquisar"></TextInput>
+              <TextInput style={styles.textInput} placeholder="Pesquisar"></TextInput>
             </View>
             
         </View>
@@ -23,14 +23,27 @@ const styles = StyleSheet.create({
     headerText: {
         fontSize: 20,
         fontWeight: 'bold',
-        marginTop: '10%',
+        marginTop: '15%',
         marginLeft: '5%',
         color: 'white'
     },
     containerInput:{
-        backgroundColor:'white',
+        marginTop: '6%',
+        backgroundColor:'#67686D',
         marginLeft: '5%',
         marginRight: '5%',
-        color: 'white'
+        borderBottomColor: 'white',
+        borderBottomLeftRadius: 15,
+        borderBottomRightRadius: 15,
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
+        flex: 0.05  
+
+    },
+    textInput: {
+        textAlign: 'justify',
+        fontSize: 15,
+        marginLeft: '3%',
+        marginTop: '1%'
     }
 })
